@@ -1,5 +1,51 @@
-@import "reset";
+// Import bootstrap-sass
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-html {
-
+// Mixins
+@mixin VendorPrefixed($name, $value) {
+    $prefixes: "", -moz-, -webkit-;
+    @each $prefix in $prefixes {
+        #{$prefix}#{$name}: $value;
+    }
 }
+
+@mixin Reset() {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    background: none !important;
+}
+
+// Common styles
+body {
+    line-height: 1.6;
+    background: #F7F6F4;
+    color: #404040;
+
+    @include VendorPrefixed(font-smoothing, antialiased);
+}
+
+.btn.more {
+    display: block;
+    margin: 2.5rem auto;
+    padding: 0.8rem 0;
+    width: 300px;
+    background: #FC8F2C;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 7px;
+    border-bottom: 3px solid #8C4D13;
+
+    &.half {
+        width: 150px;
+    }
+}
+
+// Import styles of each pages
+@import "global_navigation";
+@import "footer";
+
+
+@import "top";
