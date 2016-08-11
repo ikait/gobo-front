@@ -1,0 +1,50 @@
+
+footer {
+    padding: 5rem 0;
+    background: #FC8F2C;
+
+    .footer-inner {
+        @extend .container !optional;
+    }
+
+    .footer-item {
+        &.half {
+            @extend .col-sm-6 !optional;
+        }
+        &.full {
+            @extend .col-sm-12 !optional;
+        }
+
+        &.menu {
+            >.gobo-brand {
+                display: block;
+                width: 100%;
+                font-size: 5rem;
+                color: transparent;
+                margin-bottom: 3rem;
+                background-image: url("../img/footer_logo.png");
+                background-size: contain;
+                background-position: left center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    .footer-navigation {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        a {
+            display: block;
+            padding: 0.3rem 0;
+            color: #fff;
+        }
+    }
+
+    .copyright {
+        color: #fff;
+        display: block;
+        text-align: right;
+    }
+}
