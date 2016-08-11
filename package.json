@@ -10,7 +10,9 @@
   },
   "author": "Taishi Ikai <m@ikai.tokyo>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  },
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-preset-es2016": "^6.5.0",
