@@ -1,0 +1,39 @@
+#global-navigation {
+    background-color: #fff;
+
+    .global-navigation-inner {
+        @extend .container !optional;
+        padding: 1.5rem 0;
+    }
+
+    ul {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .item {
+        display: inline-block;
+
+        &>a {
+            color: #666;
+        }
+        &.active>a {
+            color: #333;
+        }
+    }
+
+    .gobo-brand {
+        @extend .navbar-brand !optional;
+
+        margin-left: 15px;
+        font-size: 3rem;
+        margin-right: 2rem;
+
+        color: transparent;
+        background-image: url("../img/global_navigation_logo.png");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}
