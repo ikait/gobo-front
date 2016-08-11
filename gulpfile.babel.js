@@ -22,7 +22,7 @@ gulp.task("browsersync", () => {
     browserSync.init({
         server: {
             baseDir: path.built,
-            index: "index.html"
+            index: "top.html"
         },
         notify: true
     });
