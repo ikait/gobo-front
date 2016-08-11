@@ -1,0 +1,29 @@
+box: node:4.2.2
+build:
+  steps:
+    - npm-install:
+      use-cache: true
+      options: -S -D
+    - script:
+      name: build
+      code: |
+        npm run build
+deploy:
+  steps:
+    - script:
+      name: install ncftp
+      code: |-
+        if `which ncftpput > /dev/null` ; then echo "skip install" ; else
+          wget -O- wget ftp://ftp.ncftp.com/ncftp/ncftp-3.2.5-src.tar.gz | tar xvz
+          cd ncftp-3.2.5 && ./configure && make && sudo make install
+        fi
+    - script:
+      name: deploy
+      code: |
+        ncftpput -u $FTP_USERNAME -p $FTP_PASSWORD -P 21 -t 300\
+          -v -m -R -r 10 \
+          sv9.star.netowl.jp \
+          /dev.jlk.jp/$WERCKER_GIT_REPOSITORY/$WERCKER_GIT_BRANCH/ \
+          $WERCKER_SOURCE_DIR/built/*
+    - script:
+      name:
