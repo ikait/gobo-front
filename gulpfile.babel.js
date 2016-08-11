@@ -67,6 +67,10 @@ gulp.task("scss", () => gulp.src(`${path.scss}**/*.scss`)
     }))
 );
 
+gulp.task("build:dev", ["template", "imagemin", "scss"]);
+
+gulp.task("build:prod", ["template", "imagemin", "scss", "prettify"]);
+
 gulp.task("watch", () => {
     gulp.watch([`${path.html}**/*.ejs`], ["template"]);
     gulp.watch([`${path.html}**/*.html`], ["prettify"]);
@@ -74,4 +78,4 @@ gulp.task("watch", () => {
     gulp.watch([`${path.img}**/*.+(jpg|png|gif|svg)`], ["imagemin"]);
 });
 
-gulp.task("default", ["browsersync", "template", "imagemin", "scss", "watch"]);
+gulp.task("default", ["browsersync", "build:dev", "watch"]);

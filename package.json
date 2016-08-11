@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "gulp",
-    "build": "gulp scss && gulp prettify",
+    "build": "gulp build:prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Taishi Ikai <m@ikai.tokyo>",
