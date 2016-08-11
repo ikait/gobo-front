@@ -2,12 +2,13 @@ import fs from "fs";
 import gulp from "gulp";
 import ejs from "gulp-ejs";
 import sass from "gulp-sass";
-import cssnext from "gulp-cssnext";
+import postcss from "gulp-postcss";
 import plumber from "gulp-plumber";
 import imagemin from "gulp-imagemin";
 import prettify from "gulp-prettify";
 import sourcemaps from "gulp-sourcemaps";
 import browserSync from "browser-sync";
+import cssnext from "postcss-cssnext";
 
 
 const path = {
@@ -58,7 +59,7 @@ gulp.task("scss", () => gulp.src(`${path.scss}**/*.scss`)
     .pipe(sass({
         outputStyle: "expanded"}))
     .on("error", error => console.log(error.message))
-    .pipe(cssnext())
+    .pipe(postcss([cssnext()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.built))
     .pipe(browserSync.reload({
