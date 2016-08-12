@@ -1,0 +1,144 @@
+.about-header {
+    margin: 5rem 0;
+
+    &>.about-title {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 3.6rem;
+    }
+    .about-title-inner {
+        padding-bottom: 0.2rem;
+        // border-bottom: 1px solid;
+    }
+    .about-navigation {
+
+    }
+    .about-menu {
+        list-style: none;
+        padding: 0.5rem 0;
+        margin: 0;
+        text-align: center;
+    }
+    .about-menu-item {
+        display: inline-block;
+        &>a {
+            display: block;
+            color: #FC8F2C;
+            padding: 0.25rem 2rem;
+            margin: 0 1rem;
+            border: 1px solid #FC8F2C;
+            border-radius: 10rem;
+        }
+    }
+}
+
+.about.gobo.page {
+    &>.about-header+.section {
+        margin-top: -5rem;
+    }
+    &>.section {
+        &>.section-title {
+            display: block;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 3.6rem;
+        }
+        .section-title-inner {
+            padding-bottom: 0.2rem;
+            // border-bottom: 1px solid;
+        }
+    }
+}
+
+.about-concept-box {
+    @extend .content !optional;
+    @extend .clearfix !optional;
+
+    .about-concept-title {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+    .about-concept-subtitle {
+        font-size: 1.5rem;
+        margin: 1rem 0 2rem;
+        padding: 0;
+    }
+}
+
+.missions-box {
+    @extend .content !optional;
+
+    margin: 4rem 0;
+
+    .mission-item {
+        &.third {
+            @extend .col-sm-4 !optional;
+        }
+    }
+    .mission-item-color {
+        display: block;
+        width: 10rem;
+        height: 10rem;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 5rem;
+
+        &.ugoki {
+            background: #CB342D;
+        }
+        &.tsunagi {
+            background: #F2953F;
+        }
+        &.manabi {
+            background: #489B59;
+        }
+
+    }
+    .mission-item-title {
+        color: #fff;
+        line-height: 10rem;
+    }
+    .mission-item-description {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 2.4rem;
+    }
+}
+
+.members-box {
+    @extend .content !optional;
+
+    margin: 4rem 0;
+
+    .member-item {
+        &.quarter {
+            @extend .col-sm-3 !optional;
+        }
+        margin: 2rem 0;
+    }
+    .member-item-thumbnail {
+        &>img {
+            display: block;
+            width: 10rem;
+            height: 10rem;
+            margin: 0 auto;
+            border-radius: 5rem;
+            background: skyblue;
+        }
+    }
+    .member-item-introduction {
+        margin-top: 2rem;
+        text-align: center;
+    }
+    .member-item-name {
+        font-size: 2rem;
+    }
+    .member-item-job {
+        font-size: 1.4rem;
+    }
+    .member-item-detail {
+        margin-top: 1rem;
+    }
+}
