@@ -59,7 +59,7 @@ gulp.task("scss", () => gulp.src(`${path.scss}**/*.scss`)
     .pipe(sass({
         outputStyle: "expanded"}))
     .on("error", error => console.log(error.message))
-    .pipe(postcss([cssnext()]))
+    .pipe(postcss([cssnext({browsers: 'last 3 version, > 30%'})]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.built))
     .pipe(browserSync.reload({
